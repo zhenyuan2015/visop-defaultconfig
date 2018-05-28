@@ -26,22 +26,27 @@
         {
           "name": "id",
           "description": "路由名称",
-          "type": "string"
+          "type": "input"
         },
         {
           "name": "method",
           "description": "请求方法",
-          "type": "string"
+          "type": "select",
+          "option": [
+            "GET",
+            "POST"
+          ]
         },
         {
           "name": "authority",
           "description": "权限码",
-          "type": "string"
+          "type": "input"
         },
         {
           "name": "parameters",
           "description": "参数校验",
-          "type": "json"
+          "type": "textarea",
+          "row": 5
         }
       ],
       "description": "描述data数据部分的字段描述"
@@ -50,17 +55,12 @@
   "data": [
     {
       "id": "generateRoute",
-      "method": "GET,POST",
+      "method": "POST",
       "description": "生成路由",
       "authority": "100000",
       "controller": "api/generateRoute",
       "action": "do",
-      "parameters": {
-        "config": {
-          "notEmpty": true,
-          "errorMessage": "config不能为空"
-        }
-      }
+      "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
     },
     {
       "id": "getAllRoutes",
@@ -69,12 +69,7 @@
       "authority": "100000",
       "controller": "api/getAllRoutes",
       "action": "do",
-      "parameters": {
-        "config": {
-          "notEmpty": true,
-          "errorMessage": "config不能为空"
-        }
-      }
+      "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
     },
     {
       "id": "deleteRoute",
@@ -83,12 +78,7 @@
       "authority": "100000",
       "controller": "api/deleteRoute",
       "action": "do",
-      "parameters": {
-        "config": {
-          "notEmpty": true,
-          "errorMessage": "config不能为空"
-        }
-      }
+      "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
     },
     {
       "id": "generateRoute1",
@@ -97,26 +87,22 @@
       "authority": "100000",
       "controller": "api/generateRoute",
       "action": "do",
-      "parameters": {
-        "config": {
-          "notEmpty": true,
-          "errorMessage": "config不能为空"
-        }
-      }
+      "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
     },
     {
       "id": "generateRoute2",
-      "method": "GET,POST",
+      "method": "GET",
       "description": "生成路由122121212345",
       "authority": "100000",
       "controller": "api/generateRoute",
       "action": "do",
-      "parameters": {
-        "config": {
-          "notEmpty": true,
-          "errorMessage": "config不能为空"
-        }
-      }
+      "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
+    },
+    {
+      "id": "createRouter1",
+      "method": "POST",
+      "authority": "1000002",
+      "parameters": "post"
     }
   ]
 }
