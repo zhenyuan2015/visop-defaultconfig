@@ -97,12 +97,6 @@
       "controller": "api/generateRoute",
       "action": "do",
       "parameters": "{\"config\":{\"notEmpty\":true,\"errorMessage\":\"config不能为空\"}}"
-    },
-    {
-      "id": "createRouter1",
-      "method": "POST",
-      "authority": "1000002",
-      "parameters": "post"
     }
   ]
 }
