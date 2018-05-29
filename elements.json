@@ -3,22 +3,26 @@
     {
       "id": "name",
       "value": "路由管理",
-      "description": "在页面显示的名称"
+      "description": "在页面显示的名称",
+      "type": "input"
     },
     {
       "id": "order",
       "value": 1,
-      "description": "控制在页面显示的顺序"
+      "description": "控制在页面显示的顺序",
+      "type": "input"
     },
     {
       "id": "usage",
       "value": "服务路由管理",
-      "description": "描述这个配置文件的作用"
+      "description": "描述这个配置文件的作用",
+      "type": "input"
     },
     {
       "id": "key",
       "value": "id",
-      "description": "描述data数据部分的主键字段名称"
+      "description": "描述data数据部分的主键字段名称",
+      "type": "input"
     }
   ],
   "fields": [
@@ -46,11 +50,17 @@
     {
       "id": "parameters",
       "description": "参数",
-      "type": "textarea",
+      "type": "json",
       "typeOf": "json",
       "config": {
         "row": "5"
       }
+    },
+    {
+      "id": "action",
+      "description": "请求",
+      "type": "input",
+      "config": {}
     }
   ],
   "data": [
@@ -64,10 +74,16 @@
       "parameters": {
         "config": {
           "notEmpty": true,
-          "errorMessage": "config不能为"
+          "errorMessage": "config不能为1"
         }
       },
-      "test": "2"
+      "test": "2",
+      "test1": {
+        "test": true
+      },
+      "ceshi": {
+        "config": "这里可以不填"
+      }
     },
     {
       "id": "getAllRoutes",
