@@ -24,15 +24,15 @@
   "fields": [
     {
       "id": "id",
-      "description": "路由名称",
+      "description": "路由",
       "type": "input",
-      "parameters": {}
+      "config": {}
     },
     {
       "id": "method",
       "description": "请求方法",
       "type": "select",
-      "parameters": {
+      "config": {
         "0": "GET",
         "1": "POST"
       }
@@ -41,14 +41,15 @@
       "id": "authority",
       "description": "权限码",
       "type": "input",
-      "parameters": {}
+      "config": {}
     },
     {
       "id": "parameters",
-      "description": "参数校验",
+      "description": "参数",
       "type": "textarea",
-      "parameters": {
-        "row": 5
+      "typeOf": "json",
+      "config": {
+        "row": "5"
       }
     }
   ],
@@ -63,9 +64,10 @@
       "parameters": {
         "config": {
           "notEmpty": true,
-          "errorMessage": "config不能为1"
+          "errorMessage": "config不能为"
         }
-      }
+      },
+      "test": "2"
     },
     {
       "id": "getAllRoutes",
