@@ -61,6 +61,12 @@
       "description": "请求",
       "type": "input",
       "config": {}
+    },
+    {
+      "id": "description",
+      "description": "描述",
+      "type": "input",
+      "config": {}
     }
   ],
   "data": [
@@ -140,6 +146,16 @@
           "errorMessage": "config不能为空"
         }
       }
+    },
+    {
+      "id": "testdev",
+      "description": "测试接口",
+      "type": "",
+      "config": "",
+      "method": "GET",
+      "authority": "1000001",
+      "parameters": {},
+      "action": "do"
     }
   ]
 }
