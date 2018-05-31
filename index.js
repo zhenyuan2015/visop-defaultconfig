@@ -37,7 +37,7 @@ var addElement= function(config){
   console.log('add element with data:',config, ' you can achieve this function with any program language you familiar with');
   
   var sourceFile, targetFile
-  if(connfig.__fromElement){
+  if(config.__fromElement){
     // __fromElement 执行复制的操作
     sourceFile = path.join(CURRENT_PATH, config.__fromElement.id+'.js');
     targetFile =  path.join(CURRENT_PATH,  config.id+'.js');
