@@ -2,7 +2,7 @@
   "meta": [
     {
       "id": "id",
-      "value": "/application-manage",
+      "value": "application-manage",
       "description": "在页面显示的名称",
       "type": "input"
     },
