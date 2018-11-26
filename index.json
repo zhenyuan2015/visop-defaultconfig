@@ -61,16 +61,6 @@
       }
     },
     {
-      "id": "settings",
-      "name": "参数配置",
-      "description": "/config/setting.json",
-      "__fromElement": {
-        "id": "elements",
-        "name": "数据管理",
-        "description": "管理"
-      }
-    },
-    {
       "id": "actions",
       "name": "动作列表",
       "description": "执行shell脚本或者nodejs脚本"
