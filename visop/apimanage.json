@@ -1,0 +1,513 @@
+{
+  "meta": [
+    {
+      "id": "name",
+      "value": "路由管理",
+      "description": "在页面显示的名称",
+      "type": "input"
+    },
+    {
+      "id": "order",
+      "value": 1,
+      "description": "控制在页面显示的顺序",
+      "type": "input"
+    },
+    {
+      "id": "usage",
+      "value": "服务路由管理",
+      "description": "描述这个配置文件的作用",
+      "type": "input"
+    },
+    {
+      "id": "apidoc",
+      "description": "接口文档地址",
+      "type": "",
+      "config": "",
+      "value": "http://behave.yuntianyuan.net:10005/ytyapi.html?id=apimanage",
+      "updatedAt": "2018-11-22 16:20:19"
+    },
+    {
+      "id": "logaddress",
+      "method": "",
+      "authority": "",
+      "description": "visop在线日志地址",
+      "parameters": "",
+      "__fromElement": "",
+      "status": "",
+      "value": "http://develop.yuntianyuan.net:33055/",
+      "updatedAt": "2018-07-01 08:29:38"
+    }
+  ],
+  "fields": [
+    {
+      "id": "id",
+      "description": "路由",
+      "type": "input",
+      "config": {}
+    },
+    {
+      "id": "method",
+      "description": "请求方法",
+      "type": "select",
+      "config": {
+        "0": "GET",
+        "1": "POST"
+      }
+    },
+    {
+      "id": "authority",
+      "description": "权限码",
+      "type": "input",
+      "config": {}
+    },
+    {
+      "id": "parameters",
+      "description": "参数",
+      "type": "json",
+      "typeOf": "json",
+      "config": {
+        "row": "5"
+      }
+    },
+    {
+      "id": "description",
+      "description": "描述",
+      "type": "input",
+      "config": {}
+    },
+    {
+      "id": "status",
+      "method": "",
+      "authority": "",
+      "parameters": "",
+      "action": "",
+      "description": "状态(0开发1使用2禁用)",
+      "type": "select",
+      "config": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "output",
+      "method": "",
+      "authority": "",
+      "parameters": "",
+      "action": "",
+      "description": "输出参数",
+      "type": "json",
+      "config": {
+        "row": 4
+      }
+    },
+    {
+      "id": "tags",
+      "description": "类型",
+      "type": "select",
+      "config": [
+        "内容",
+        "试卷",
+        "数据统计",
+        "用户",
+        "权限",
+        "系统",
+        "首页",
+        "通用接口"
+      ],
+      "updatedAt": "2018-11-22 17:19:22"
+    },
+    {
+      "id": "username",
+      "method": "",
+      "authority": "",
+      "description": "用户名",
+      "parameters": "",
+      "__fromElement": "",
+      "status": "",
+      "type": "input",
+      "config": {},
+      "createdAt": "2018-07-01 07:59:58",
+      "updatedAt": "2018-07-01 07:59:58"
+    },
+    {
+      "id": "service",
+      "description": "区分管理端/PC/手机网站",
+      "type": "select",
+      "config": [
+        "phone",
+        "pc",
+        "admin",
+        "file",
+        "template"
+      ],
+      "createdAt": "2018-07-02 03:14:37",
+      "updatedAt": "2018-07-06 08:13:19"
+    },
+    {
+      "id": "path",
+      "authority": "",
+      "parameters": "",
+      "status": "",
+      "output": "",
+      "name": "",
+      "description": "路由路径",
+      "createdAt": "2018-10-11 14:31:52",
+      "updatedAt": "2018-10-11 14:33:41",
+      "__visopexecute": "",
+      "value": "",
+      "__visoproute": "",
+      "type": "input",
+      "config": {}
+    },
+    {
+      "id": "creator",
+      "method": "",
+      "authority": "",
+      "parameters": "",
+      "status": "",
+      "output": "",
+      "tags": "",
+      "description": "创建者",
+      "type": "input",
+      "config": {},
+      "createdAt": "2018-11-22 09:53:23",
+      "updatedAt": "2018-11-22 09:53:23"
+    }
+  ],
+  "data": [
+    {
+      "id": "uploadImage",
+      "route": "iresservice/upload",
+      "description": "上传图片",
+      "type": "",
+      "config": "",
+      "updatedAt": "2018-10-11 14:34:27",
+      "method": "POST",
+      "authority": 1,
+      "parameters": {},
+      "status": 1,
+      "output": {},
+      "tags": "首页",
+      "service": "pc",
+      "username": "dong",
+      "createdAt": "2018-08-27 16:11:41",
+      "path": "iresservice/upload"
+    },
+    {
+      "id": "dreamf_api",
+      "method": "POST",
+      "authority": 23111,
+      "parameters": {
+        "table": {
+          "notEmpty": true,
+          "errorMessage": "要操作的表名"
+        }
+      },
+      "status": 1,
+      "output": {},
+      "tags": "系统",
+      "createdAt": "2018-11-22 09:52:20",
+      "updatedAt": "2018-11-22 13:36:30",
+      "creator": "zhang",
+      "description": "使用dreamfactory查询数据库的表，使用dreamfactory提供的查询语句；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Retrieving_Records ，http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Filter_Strings"
+    },
+    {
+      "id": "loginSms",
+      "authority": "",
+      "parameters": {
+        "phoneNumber": {
+          "notEmpty": true,
+          "errorMessage": "请输入手机号"
+        },
+        "code": {
+          "optional": true,
+          "errorMessage": "请输入验证码"
+        }
+      },
+      "output": "",
+      "method": "POST",
+      "status": 1,
+      "description": "财务微信端手机登录",
+      "__fromElement": {
+        "id": "tess",
+        "authority": "",
+        "parameters": "",
+        "output": ""
+      },
+      "createdAt": "2018-11-22 10:30:27",
+      "updatedAt": "2018-11-22 10:42:07"
+    },
+    {
+      "id": "shanghaiArea",
+      "authority": "",
+      "parameters": "",
+      "output": "",
+      "method": "GET",
+      "status": 1,
+      "description": "上海市地区选择",
+      "__fromElement": {
+        "id": "tess",
+        "authority": "",
+        "parameters": "",
+        "output": ""
+      },
+      "createdAt": "2018-11-22 13:41:18",
+      "updatedAt": "2018-11-22 13:41:30"
+    },
+    {
+      "id": "dreamf_query",
+      "method": "POST",
+      "authority": 23111,
+      "parameters": {
+        "table": {
+          "notEmpty": true,
+          "errorMessage": "要操作的表名"
+        }
+      },
+      "status": 1,
+      "output": {},
+      "tags": "通用接口",
+      "createdAt": "2018-11-22 14:47:04",
+      "updatedAt": "2018-11-22 17:19:42",
+      "creator": "zhang",
+      "description": "使用dreamfactory查询数据库的表，使用dreamfactory提供的查询语句；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Retrieving_Records ，http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Filter_Strings；{ \"filter\":\"user\",  \"filter\":\"(text=123)and(num>3)\",  \"limit\":10, \"offset\":0,  \"order\":\"id desc\",  \"fields\":\"*\",  \"include_count\": true }",
+      "__fromElement": {
+        "id": "dreamf_api",
+        "method": "POST",
+        "authority": 23111,
+        "parameters": {
+          "table": {
+            "notEmpty": true,
+            "errorMessage": "要操作的表名"
+          }
+        },
+        "status": 1,
+        "output": {},
+        "tags": "系统",
+        "createdAt": "2018-11-22 09:52:20",
+        "updatedAt": "2018-11-22 13:36:30",
+        "creator": "zhang",
+        "description": "使用dreamfactory查询数据库的表，使用dreamfactory提供的查询语句；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Retrieving_Records ，http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Filter_Strings"
+      }
+    },
+    {
+      "id": "dreamf_create",
+      "method": "POST",
+      "authority": 23111,
+      "parameters": {
+        "table": {
+          "notEmpty": true,
+          "errorMessage": "要操作的表名"
+        }
+      },
+      "status": 1,
+      "output": {},
+      "tags": "通用接口",
+      "createdAt": "2018-11-22 15:03:26",
+      "updatedAt": "2018-11-22 17:20:04",
+      "creator": "zhang",
+      "description": "使用dreamfactory在数据库的表新增记录；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Schema#Creating_Schema；{ \t\"table\":\"user\", \t\"resource\":{ \t\t\"text\"\t:\"from client 1\" \t} }",
+      "__fromElement": {
+        "id": "dreamf_query",
+        "method": "POST",
+        "authority": 23111,
+        "parameters": {
+          "table": {
+            "notEmpty": true,
+            "errorMessage": "要操作的表名"
+          }
+        },
+        "status": 1,
+        "output": {},
+        "tags": "系统",
+        "createdAt": "2018-11-22 14:47:04",
+        "updatedAt": "2018-11-22 14:47:04",
+        "creator": "zhang",
+        "description": "使用dreamfactory查询数据库的表，使用dreamfactory提供的查询语句；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Retrieving_Records ，http://wiki.dreamfactory.com/DreamFactory/Features/Database/Records#Filter_Strings"
+      }
+    },
+    {
+      "id": "dreamf_update",
+      "method": "POST",
+      "authority": 23111,
+      "parameters": {
+        "table": {
+          "notEmpty": true,
+          "errorMessage": "要操作的表名"
+        }
+      },
+      "status": 1,
+      "output": {},
+      "tags": "通用接口",
+      "createdAt": "2018-11-22 15:34:42",
+      "updatedAt": "2018-11-22 17:20:20",
+      "creator": "zhang",
+      "description": "使用dreamfactory更新数据库的表记录；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Schema#Creating_Schema；{ \t\"table\":\"user\", \t\"resource\":{ \t\t\"id\": 4, \t\t\"text\"\t:\"from client 1\" \t}, \t\"fields\":\"id,text\" }",
+      "__fromElement": {
+        "id": "dreamf_create",
+        "method": "POST",
+        "authority": 23111,
+        "parameters": {
+          "table": {
+            "notEmpty": true,
+            "errorMessage": "要操作的表名"
+          }
+        },
+        "status": 1,
+        "output": {},
+        "tags": "系统",
+        "createdAt": "2018-11-22 15:03:26",
+        "updatedAt": "2018-11-22 15:10:29",
+        "creator": "zhang",
+        "description": "使用dreamfactory在数据库的表新增记录；文档地址：http://wiki.dreamfactory.com/DreamFactory/Features/Database/Schema#Creating_Schema"
+      }
+    },
+    {
+      "id": "adminLogin",
+      "method": "POST",
+      "authority": 110001,
+      "description": "后台登录",
+      "status": 1,
+      "tags": "用户",
+      "creator": "dong",
+      "path": "/adminLogin",
+      "parameters": {
+        "openname": {
+          "notEmpty": "true",
+          "errorMessage": "账号名称"
+        },
+        "openpass": {
+          "notEmpty": "true",
+          "errorMessage": "登录密码"
+        }
+      },
+      "createdAt": "2018-11-23 09:44:24",
+      "updatedAt": "2018-11-23 09:44:24"
+    },
+    {
+      "id": "adminRegister",
+      "method": "POST",
+      "authority": 110001,
+      "description": "后台添加管理员",
+      "status": 1,
+      "tags": "用户",
+      "creator": "dong",
+      "path": "/adminRegister",
+      "parameters": {
+        "openname": {
+          "notEmpty": "true",
+          "errorMessage": "账号名称"
+        },
+        "openpass": {
+          "notEmpty": "true",
+          "errorMessage": "登录密码"
+        }
+      },
+      "createdAt": "2018-11-23 09:46:24",
+      "updatedAt": "2018-11-23 09:46:24",
+      "__fromElement": {
+        "id": "adminLogin",
+        "method": "POST",
+        "authority": 110001,
+        "description": "后台登录",
+        "status": 1,
+        "tags": "用户",
+        "creator": "dong",
+        "path": "/adminLogin",
+        "parameters": {
+          "openname": {
+            "notEmpty": "true",
+            "errorMessage": "账号名称"
+          },
+          "openpass": {
+            "notEmpty": "true",
+            "errorMessage": "登录密码"
+          }
+        },
+        "createdAt": "2018-11-23 09:44:24",
+        "updatedAt": "2018-11-23 09:44:24"
+      }
+    },
+    {
+      "id": "adminMenuPlot",
+      "method": "POST",
+      "authority": 110001,
+      "description": "后台目录和按钮的结构返回",
+      "status": 1,
+      "tags": "用户",
+      "creator": "dong",
+      "path": "/adminMenuPlot",
+      "parameters": {
+        "d_id": {
+          "notEmpty": "true",
+          "errorMessage": "用户id"
+        }
+      },
+      "createdAt": "2018-11-23 10:44:10",
+      "updatedAt": "2018-11-23 10:45:41",
+      "__fromElement": {
+        "id": "adminRegister",
+        "method": "POST",
+        "authority": 110001,
+        "description": "后台添加管理员",
+        "status": 1,
+        "tags": "用户",
+        "creator": "dong",
+        "path": "/adminRegister",
+        "parameters": {
+          "openname": {
+            "notEmpty": "true",
+            "errorMessage": "账号名称"
+          },
+          "openpass": {
+            "notEmpty": "true",
+            "errorMessage": "登录密码"
+          }
+        },
+        "createdAt": "2018-11-23 09:46:24",
+        "updatedAt": "2018-11-23 09:46:24"
+      }
+    },
+    {
+      "id": "uploadImageBase64",
+      "authority": "",
+      "parameters": {
+        "imgData": {
+          "notEmpty": true,
+          "errorMessage": "图片数据"
+        },
+        "type": {
+          "notEmpty": true,
+          "errorMessage": "图片类型"
+        }
+      },
+      "output": "",
+      "method": "POST",
+      "status": 1,
+      "description": "上传图片base64",
+      "__fromElement": {
+        "id": "loginSms",
+        "authority": "",
+        "parameters": {
+          "phoneNumber": {
+            "notEmpty": true,
+            "errorMessage": "请输入手机号"
+          },
+          "code": {
+            "optional": true,
+            "errorMessage": "请输入验证码"
+          }
+        },
+        "output": "",
+        "method": "POST",
+        "status": 1,
+        "description": "财务微信端手机登录",
+        "createdAt": "2018-11-22 10:30:27",
+        "updatedAt": "2018-11-22 10:42:07"
+      },
+      "createdAt": "2018-11-23 10:52:20",
+      "updatedAt": "2018-11-23 14:42:52"
+    }
+  ]
+}
